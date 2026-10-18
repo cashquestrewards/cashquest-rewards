@@ -1,181 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101827">
-  <title>CashQuest Rewards</title>
-  <style>
-    * { box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10233e">
+<title>CashQuest Rewards | Explore Your Options</title>
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #101827;
-      color: white;
-      line-height: 1.6;
-    }
-
-    header {
-      text-align: center;
-      padding: 55px 20px;
-      background: linear-gradient(135deg, #123b36, #101827);
-    }
-
-    h1 {
-      font-size: 38px;
-      margin-bottom: 10px;
-      color: #42e6a4;
-    }
-
-    h2 { color: #42e6a4; }
-
-    .subtitle {
-      font-size: 18px;
-      color: #d1d5db;
-    }
-
-    main {
-      max-width: 750px;
-      margin: auto;
-      padding: 25px 18px;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 25px;
-      border-radius: 16px;
-      margin-bottom: 20px;
-      border: 1px solid #334155;
-    }
-
-    .button {
-      display: inline-block;
-      background: #42e6a4;
-      color: #101827;
-      padding: 12px 22px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .notice {
-      font-size: 14px;
-      color: #cbd5e1;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      color: #94a3b8;
-      font-size: 13px;
-    }
-  </style>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+ color:#172b46;
+ background:#f5f7fa;
+ line-height:1.6;
+}
+a{text-decoration:none}
+nav{
+ background:white;
+ padding:17px 6%;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ border-bottom:1px solid #e5eaf0;
+}
+.logo{
+ font-size:21px;
+ font-weight:800;
+ color:#102c4b;
+ letter-spacing:-.6px;
+}
+.logo span{color:#008a75}
+.navlink{
+ color:#173e62;
+ font-size:13px;
+ font-weight:700;
+}
+.hero{
+ background:linear-gradient(135deg,#10233e,#194e68);
+ color:white;
+ padding:75px 22px 85px;
+ text-align:center;
+}
+.eyebrow{
+ display:inline-block;
+ padding:7px 15px;
+ background:rgba(255,255,255,.12);
+ border:1px solid rgba(255,255,255,.2);
+ border-radius:30px;
+ font-size:12px;
+ font-weight:700;
+ letter-spacing:1px;
+ text-transform:uppercase;
+}
+.hero h1{
+ font-size:clamp(35px,7vw,57px);
+ line-height:1.13;
+ letter-spacing:-1.5px;
+ margin:25px auto 20px;
+ max-width:800px;
+}
+.hero h1 span{color:#65dfbe}
+.hero p{
+ color:#d8e5ef;
+ font-size:17px;
+ max-width:560px;
+ margin:0 auto 30px;
+}
+.btn{
+ display:inline-block;
+ padding:15px 25px;
+ border-radius:9px;
+ font-size:15px;
+ font-weight:750;
+ text-align:center;
+}
+.btn-primary{
+ background:#00ad8d;
+ color:white;
+}
+.btn-outline{
+ border:1px solid #b9cad8;
+ color:#173e62;
+}
+.hero .btn{background:white;color:#123553}
+.container{
+ max-width:1100px;
+ margin:auto;
+ padding:60px 20px;
+}
+.section-label{
+ color:#008a75;
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:1.7px;
+ text-transform:uppercase;
+}
+h2{
+ font-size:clamp(27px,5vw,36px);
+ line-height:1.2;
+ letter-spacing:-.8px;
+ margin:10px 0 15px;
+}
+.intro{
+ color:#64748b;
+ max-width:620px;
+ margin-bottom:30px;
+}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+ gap:20px;
+}
+.card{
+ background:white;
+ border:1px solid #e1e7ef;
+ border-radius:16px;
+ padding:30px 25px;
+ box-shadow:0 8px 25px rgba(16,35,62,.045);
+}
+.icon{
+ width:54px;
+ height:54px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ background:#e8f7f2;
+ border-radius:13px;
+ font-size:25px;
+ margin-bottom:20px;
+}
+.card h3{
+ font-size:21px;
+ margin:0 0 10px;
+}
+.card p{
+ color:#607086;
+ font-size:14px;
+}
+.tag{
+ display:inline-block;
+ background:#edf2f7;
+ color:#52657c;
+ padding:7px 11px;
+ border-radius:6px;
+ font-size:12px;
+ font-weight:700;
+ margin-top:12px;
+}
+.card .btn{
+ margin-top:20px;
+ width:100%;
+}
+.trust{
+ background:#eaf0f5;
+}
+.steps{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+ gap:25px;
+ margin-top:30px;
+}
+.step-number{
+ width:40px;
+ height:40px;
+ background:#123b58;
+ color:white;
+ border-radius:50%;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-weight:bold;
+}
+.steps h3{margin-bottom:8px}
+.steps p{
+ color:#617188;
+ font-size:14px;
+}
+.notice{
+ background:white;
+ border-left:4px solid #008a75;
+ border-radius:9px;
+ padding:23px;
+ color:#52657c;
+ font-size:14px;
+}
+.contact{
+ background:#10233e;
+ color:white;
+ text-align:center;
+ padding:65px 20px;
+}
+.contact p{color:#cad8e5}
+.contact .btn{
+ background:#00ad8d;
+ color:white;
+ margin-top:15px;
+}
+footer{
+ background:#09192d;
+ color:#a9bbcb;
+ padding:35px 20px;
+ text-align:center;
+ font-size:12px;
+}
+footer a{color:#b6e9dc}
+@media(max-width:600px){
+ .hero{padding:65px 20px 70px}
+ .container{padding:48px 18px}
+ .card{padding:25px 20px}
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>💰 CashQuest Rewards</h1>
-  <p class="subtitle">
-    Discover opportunities. Explore rewards.
-    Make smarter money moves.
-  </p>
-  <a class="button" href="#explore">Explore CashQuest</a>
-</header>
+<nav>
+ <div class="logo">CashQuest<span> Rewards</span></div>
+ <a class="navlink" href="#explore">Explore Options</a>
+</nav>
 
-<main id="explore">
+<section class="hero">
+ <div class="eyebrow">Explore With Confidence</div>
+ <h1>Better Financial Choices <span>Start Here.</span></h1>
+ <p>
+ Explore financial resources, potential cash
+ advance options, and third-party reward
+ opportunities—all in one convenient place.
+ </p>
+ <a class="btn" href="#explore">Explore Your Options →</a>
+</section>
 
-  <div class="card">
-    <h2>🎮 Games & Rewards</h2>
-    <p>
-      Discover third-party platforms offering
-      games, surveys, and promotional rewards.
-    </p>
-    <p class="notice">
-      Coming soon. Rewards depend on each
-      provider's eligibility requirements and terms.
-    </p>
-  </div>
+<main>
 
-  <div class="card">
-    <h2>💵 Personal Loan Options</h2>
-    <p>
-      Explore third-party lending services
-      and compare available financial options.
-    </p>
-    <p class="notice">
-      Coming soon. CashQuest Rewards is not
-      a lender. Loan approval, rates, and terms
-      are determined by third-party providers.
-    </p>
-  </div>
+<section class="container" id="explore">
+ <div class="section-label">What We Offer</div>
+ <h2>Find Opportunities That Fit Your Needs</h2>
+ <p class="intro">
+ CashQuest Rewards helps you discover and
+ learn about third-party services so you
+ can make informed decisions.
+ </p>
 
-  <div class="card">
-    <h2>⚡ Paycheck Advance Options</h2>
-    <p>
-      Learn about services that may offer
-      eligible users access to earned wages
-      or cash advances.
-    </p>
-    <p class="notice">
-      Coming soon. Availability, fees, repayment
-      requirements, and eligibility vary by provider.
-    </p>
-  </div>
+ <div class="grid">
 
-  <div class="card">
-    <h2>🚀 About CashQuest</h2>
-    <p>
-      CashQuest Rewards helps visitors discover
-      third-party financial products and
-      reward opportunities in one place.
-    </p>
-    <p>
-      Our mission is to make exploring these
-      opportunities simple, transparent,
-      and accessible.
-    </p>
-  </div>
+  <article class="card">
+   <div class="icon">🏦</div>
+   <h3>Personal Loan Resources</h3>
+   <p>
+    Learn about third-party personal loan
+    services and important considerations
+    before applying.
+   </p>
+   <div class="tag">Partner options coming soon</div>
+   <br>
+   <a class="btn btn-outline" href="#disclosures">
+    Learn More →
+   </a>
+  </article>
 
-  <div class="card">
-    <h2>📧 Contact Us</h2>
-    <p>
-      Questions or business inquiries?
-    </p>
-    <a class="button"
-       href="mailto:cashquestrewards@gmail.com">
-       Email CashQuest
-    </a>
-  </div>
+  <article class="card">
+   <div class="icon">⚡</div>
+   <h3>Paycheck Advance Services</h3>
+   <p>
+    Discover information about earned wage
+    access and cash advance services,
+    including eligibility and potential fees.
+   </p>
+   <div class="tag">Partner options coming soon</div>
+   <br>
+   <a class="btn btn-outline" href="#disclosures">
+    Learn More →
+   </a>
+  </article>
 
-  <div class="card">
-    <h2>Important Disclosures</h2>
-    <p class="notice">
-      CashQuest Rewards is an informational
-      website. We do not directly provide
-      loans, cash advances, or paid rewards.
-    </p>
-    <p class="notice">
-      We may receive compensation when
-      visitors use certain partner links.
-      Compensation does not guarantee
-      approval or earnings.
-    </p>
-    <p class="notice">
-      Never share your banking passwords,
-      Social Security number, or sensitive
-      financial information through this website.
-    </p>
-  </div>
+  <article class="card">
+   <div class="icon">🎁</div>
+   <h3>Games & Rewards</h3>
+   <p>
+    Explore third-party games, surveys,
+    and promotional reward opportunities
+    as they become available.
+   </p>
+   <div class="tag">Partner options coming soon</div>
+   <br>
+   <a class="btn btn-outline" href="#disclosures">
+    Learn More →
+   </a>
+  </article>
 
-</main>
+ </div>
+</section>
 
-<footer>
-  © 2026 CashQuest Rewards<br>
-  Opportunities are subject to third-party terms.
-</footer>
-
-</body>
-</html>
+<section class="trust">
+ <div class="container">
+  <div class="section-label">Our Approach</div>
+  <h2>Clear Information. No Empty Promises.</h2>
+  <p class="intro">
+   Financial decisions matter.
